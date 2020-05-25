@@ -19,6 +19,7 @@ ApplicationWindow
 
       Page
       {
+         title: qsTr("Home")
          Rectangle
          {
             id : clock
@@ -47,11 +48,13 @@ ApplicationWindow
 
       PageDigitalClock
       {
+         title: qsTr("Watch")
          id: pagedigitalclock
       }
 
       PageStopWatch
       {
+         title: qsTr("Timer")
          id: pagestopwatch
       }
    }

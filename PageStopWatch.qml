@@ -7,7 +7,10 @@ Page
 
    StopWatch
    {
-      anchors.centerIn: parent;
+      anchors.left: parent.left;
+      anchors.top: parent.top;
+      anchors.right: parent.right;
+      anchors.bottom: parent.bottom;
    }
 }
 

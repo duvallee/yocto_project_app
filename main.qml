@@ -1,6 +1,4 @@
 import QtQuick 2.11
-import QtQuick.Controls 2.11
-import QtQuick.Controls.Material 2.11
 
 ApplicationWindow
 {

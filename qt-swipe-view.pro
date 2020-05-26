@@ -28,11 +28,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 # -----------------------------------------------
-HEADERS +=
+HEADERS += StopWatchControl.h \
 
 # -----------------------------------------------
 SOURCES += \
         main.cpp  \
+        StopWatchControl.cpp  \
 
 # -----------------------------------------------
 RESOURCES += qml.qrc

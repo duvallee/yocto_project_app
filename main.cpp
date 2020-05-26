@@ -18,12 +18,7 @@
 
 #include <QQuickView>
 
-
-
-QCoreApplication* createApplication(int &argc, char *argv[])
-{
-   return new QApplication(argc, argv);
-}
+#include "StopWatchControl.h"
 
 
 // --------------------------------------------------------------------------
@@ -34,19 +29,17 @@ QCoreApplication* createApplication(int &argc, char *argv[])
 int main(int argc, char *argv[])
 {
    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
    QScopedPointer<QCoreApplication> app((QCoreApplication *) (new QApplication(argc, argv)));
 
-//   qmlRegisterType<DigitalClock>("digitalclocks", 1, 0, "DigitalClock");
+   // --------------------------------------------------------------------------
+   qmlRegisterType<StopWatchControl>("duvallee.custom.StopWatchControl", 1, 0, "StopWatchControl");
 
-//   DigitalClock clock;
-//   clock.show();
-
+   // --------------------------------------------------------------------------
    if (qobject_cast<QApplication *>(app.data()))
    {
    }
 
-
+   // --------------------------------------------------------------------------
    QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));;
    if (engine.rootObjects().isEmpty())
    {

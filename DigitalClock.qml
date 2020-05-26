@@ -1,4 +1,4 @@
-import QtQuick 2.13
+import QtQuick 2.11
 import QtQuick.Layouts 1.1
 
 Rectangle

@@ -1,6 +1,9 @@
-import QtQuick 2.13
+
+import QtQuick 2.11
 import QtQuick.Layouts 1.2
-import QtQuick.Controls 2.13
+import QtQuick.Controls 2.11
+
+import duvallee.custom.StopWatchControl 1.0
 
 ColumnLayout
 {
@@ -16,7 +19,8 @@ ColumnLayout
    function timeChanged()
    {
       var today = new Date;
-      stop_watch_text.text = Qt.formatTime(today, "HH:mm:ss AP")
+      // stop_watch_text.text = Qt.formatTime(today, "HH:mm:ss AP")
+      stop_watch_text.text = stopwatchcontrol.userName
    }
 
    Timer
@@ -27,6 +31,12 @@ ColumnLayout
       running: true
       triggeredOnStart: true
       onTriggered: stopwatch.timeChanged()
+   }
+
+   // ----------------------------------------------------------------
+   StopWatchControl
+   {
+      id: stopwatchcontrol
    }
 
    // ----------------------------------------------------------------

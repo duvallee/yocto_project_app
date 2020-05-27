@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
 
    // --------------------------------------------------------------------------
    QQmlApplicationEngine engine;
-   engine.setImportPathList(QStringList(QStringLiteral("qrc:/")));
+   // QML2_IMPORT_PATH
+//   engine.setImportPathList(QStringList(QStringLiteral("qrc:/")));
    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
    if (engine.rootObjects().isEmpty())

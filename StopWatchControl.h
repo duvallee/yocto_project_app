@@ -12,24 +12,51 @@
 
 #include <QObject>
 #include <QString>
+#include <QElapsedTimer>
 
 class StopWatchControl : public QObject
 {
    Q_OBJECT
-   Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChanged)
 
+   // ----------------------------------------------------------------------------------
+   Q_PROPERTY(QString getStopWatchTimerValue READ getStopWatchTimerValue)
+   Q_PROPERTY(uint StartStopWatch READ StartStopWatch)
+   Q_PROPERTY(uint StopStopWatch READ StopStopWatch)
+   Q_PROPERTY(uint ReStartStopWatch READ ReStartStopWatch)
+
+   Q_PROPERTY(uint getStopWatchRunnig READ getStopWatchRunnig NOTIFY getStopWatchRunnigChanged)
+   Q_PROPERTY(uint getStopWatchReset READ getStopWatchReset NOTIFY getStopWatchResetChanged)
+
+   Q_PROPERTY(QString getStopWatchTimerRecording READ getStopWatchTimerRecording)
+
+// ----------------------------------------------------------------------------------
 public:
    explicit StopWatchControl(QObject* parent = nullptr);
 
-   QString userName();
-   void setUserName(const QString &userName);
+   // ----------------------------------------------------------------------------------
+   QString getStopWatchTimerValue();
+   uint StartStopWatch();
+   uint StopStopWatch();
+   uint ReStartStopWatch();
 
+   uint getStopWatchRunnig();
+   uint getStopWatchReset();
+
+   QString getStopWatchTimerRecording();
+
+// ----------------------------------------------------------------------------------
 signals:
-   void userNameChanged();
+   void getStopWatchRunnigChanged();
+   void getStopWatchResetChanged();
 
 private:
-   QString m_userName;
+   // ----------------------------------------------------------------------------------
+   qint64 m_StopWatchTimer;
+   uint m_StopWatchTimerRunning;
 
+   uint m_StopWatchTimerHitoryIndex;
+
+   QElapsedTimer m_StopWatchElapsedTimer;
 };
 
 #endif   // STOPWATCHCONTROL_H_

@@ -6,7 +6,7 @@ ApplicationWindow
 {
    id: main_window
    visible: true
-   width: 640
+   width: 800
    height: 480
    title: qsTr("qt-swipe-view")
 

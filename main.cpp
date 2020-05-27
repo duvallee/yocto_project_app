@@ -24,7 +24,10 @@ int main(int argc, char *argv[])
    qmlRegisterType<StopWatchControl>("duvallee.custom.StopWatchControl", 1, 0, "StopWatchControl");
 
    // --------------------------------------------------------------------------
-   QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));;
+   QQmlApplicationEngine engine;
+   engine.setImportPathList(QStringList(QStringLiteral("qrc:/")));
+   engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
    if (engine.rootObjects().isEmpty())
    {
       return -1;

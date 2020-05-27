@@ -1,5 +1,5 @@
 import QtQuick 2.11
-import QtQuick.Layouts 1.1
+import QtQuick.Layouts 2.11
 
 Rectangle
 {

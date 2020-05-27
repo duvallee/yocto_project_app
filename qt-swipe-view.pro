@@ -9,6 +9,7 @@ QT += quick
 QT += core
 QT += widgets
 QT += gui
+QT += quickcontrols2
 
 # -----------------------------------------------
 CONFIG += c++11

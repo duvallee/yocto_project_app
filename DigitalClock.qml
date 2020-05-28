@@ -27,7 +27,7 @@ Rectangle
    Text
    {
       id: clock_text
-      color: "yellow"
+      color: "green"
 
       font.bold: true;
       font.pixelSize: 36

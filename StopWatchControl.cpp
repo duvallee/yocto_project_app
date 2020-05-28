@@ -147,7 +147,7 @@ QString StopWatchControl::getStopWatchTimerRecording()
    }
 
    m_StopWatchTimerHitoryIndex++;
-   stopwatch_string.sprintf("%03d - %02d : %02d . %03d", m_StopWatchTimerHitoryIndex, (int)((timer_count / (1000 * 60)) % 60), (int)((timer_count / 1000) % 60), (int)(timer_count % 1000));
+   stopwatch_string.sprintf("%03d         %02d:%02d.%03d", m_StopWatchTimerHitoryIndex, (int)((timer_count / (1000 * 60)) % 60), (int)((timer_count / 1000) % 60), (int)(timer_count % 1000));
    return stopwatch_string;
 }
 
